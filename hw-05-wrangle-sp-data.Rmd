@@ -143,6 +143,8 @@ Now that we have the data in the format we wanted, all that is left is to calcul
 
 5.  What function from the tidyverse do we use the add a new variable to a data frame while keeping the existing variables?
 
+**We can use the mutate function to add a new variable**
+
 One way of calculating the distance between any two points on the earth is to use the Haversine distance formula.
 This formula takes into account the fact that the earth is not flat, but instead spherical.
 
@@ -173,17 +175,38 @@ This function takes five arguments:
 
 6.  Calculate the distances between all pairs of Denny's and La Quinta locations and save this variable as `distance`.
     Make sure to save this variable in THE `dn_lq_ak` data frame so that you can use it later.
+    
+```{r}
+dn_lq_ak <- dn_lq_ak%>%
+  mutate(distance = haversine(longitude.x, latitude.x, longitude.y, latitude.y, round = 3))
+```
+    
 
 7.  Calculate the minimum distance between a Denny's and La Quinta for each Denny's location.
     To do so we group by Denny's locations and calculate a new variable that stores the information for the minimum distance.
 
-```{r eval = FALSE}
+```{r}
 dn_lq_ak_mindist <- dn_lq_ak %>%
   group_by(address.x) %>%
   summarise(closest = min(distance))
 ```
 
 8.  Describe the distribution of the distances Denny's and the nearest La Quinta locations in Alaska. Also include an appripriate visualization and relevant summary statistics.
+
+```{r}
+dn_lq_ak_mindist%>%
+  ggplot(aes(x = closest)) + 
+  geom_histogram(binwidth = 2)
+```
+
+```{r}
+dn_lq_ak_mindist%>%
+  ggplot(aes(x = closest)) + 
+  geom_density()
+```
+
+
+**This is a bimodal distribution** 
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
