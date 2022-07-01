@@ -424,6 +424,7 @@ and <a href="https://rstudio-education.github.io/dsbox/reference/laquinta.html">
   filter(state == &quot;AK&quot;)
 nrow(dn_ak)</code></pre>
 <pre><code>## [1] 3</code></pre>
+<p><strong>There are 3</strong></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Filter the La Quinta dataframe for Alaska (AK) and save the result
 as <code>lq_ak</code>. How many La Quinta locations are there in
@@ -433,6 +434,7 @@ Alaska?</li>
   filter(state == &quot;AK&quot;)
 nrow(lq_ak)</code></pre>
 <pre><code>## [1] 2</code></pre>
+<p><strong>There are 2</strong></p>
 <p>Next we’ll calculate the distance between all Denny’s and all La
 Quinta locations in Alaska. Let’s take this step by step:</p>
 <p><strong>Step 1:</strong> There are 3 Denny’s and 2 La Quinta
@@ -452,6 +454,7 @@ locations.</p>
 locations in Alaska, i.e. how many distances do we need to calculate
 between the locations of these establishments in Alaska?</li>
 </ol>
+<p><strong>There are a total of 6 pairings</strong>*</p>
 <p>In order to calculate these distances we need to first restructure
 our data to pair the Denny’s and La Quinta locations. To do so, we will
 join the two data frames. We have six join options in R. Each of these
@@ -510,6 +513,8 @@ dn_lq_ak</code></pre>
 <li>How many observations are in the joined <code>dn_lq_ak</code> data
 frame? What are the names of the variables in this data frame.</li>
 </ol>
+<p><strong>There are a total of 6 observations, which are from the
+Denny’s dataframe</strong></p>
 <p><code>.x</code> in the variable names means the variable comes from
 the <code>x</code> data frame (the first argument in the
 <code>full_join</code> call, i.e. <code>dn_ak</code>), and
