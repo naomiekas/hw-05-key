@@ -1,19 +1,13 @@
 ---
-title: "Lab 05 - La Quinta is Spanish for next to Denny's, Pt. 2"
-subtitle: "Wrangling spatial data"
-output: 
-  tufte::tufte_html:
-    tufte_variant: "envisioned"
-    highlight: pygments
-    css: ../lab.css
-link-citations: yes
+title: "HW 05 - La Quinta is Spanish for next to Denny's, Pt. 2"
+output: html_document
 ---
 
 ```{r fig.margin = TRUE, echo = FALSE}
 knitr::include_graphics("img/mitch-hedgeberg-lqd.jpg")
 ```
 
-In this lab we revisit the Denny's and La Quinta Inn and Suites data we visualized in the previous lab.
+In this homework we revisit the Denny's and La Quinta Inn and Suites data we visualized in a previous lab.
 
 # Learning goals
 
@@ -35,7 +29,7 @@ If anything is missing, commit and push again.
 
 ## Packages
 
-We'll use the **tidyverse** package for much of the data wrangling and visualisation and the data lives in the **dsbox** package.
+We'll use the **tidyverse** package for much of the data wrangling and visualization and the data lives in the **dsbox** package.
 These packages are already installed for you.
 You can load them by running the following in your Console:
 
